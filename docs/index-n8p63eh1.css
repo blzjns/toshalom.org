@@ -1,0 +1,1 @@
+.logo-container{display:flex;justify-content:center;align-items: center;gap:2rem;margin-bottom:2rem}.logo{will-change:filter;height:6em;padding:1.5em;transition:filter .3s}.logo:hover{filter:drop-shadow(0 0 2em #646cffaa)}
