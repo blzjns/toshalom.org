@@ -18,7 +18,6 @@ const server = serve({
         // Handle file not found or other errors
         return new Response("Not Found", { status: 404 });
       }
-
     },
     "/api/hello": {
       async GET(req) {
