@@ -5,7 +5,7 @@ const server = serve({
   routes: {
     // Serve index.html for all unmatched routes.
     "/*": index,
-    "/db/:fileName": async req => {
+    "/toshalom.org/db/:fileName": async req => {
       const fileName = req.params.fileName;
 
       // const url = new URL(req.url);

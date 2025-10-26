@@ -16,7 +16,7 @@ export function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/db/fixed_events.json'); // Replace with your API endpoint
+        const response = await fetch('/toshalom.org/db/fixed_events.json'); // Replace with your API endpoint
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
