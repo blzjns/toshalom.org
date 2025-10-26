@@ -1,21 +1,17 @@
-# bun-react-template
+# Toronto - Shalom Catholic Community website
 
-To install dependencies:
+## Make changes to the website
 
-```bash
-bun install
-```
+Changes can be made live in production by changing the [./docs/db](./docs/db/) files. 
 
-To start a development server:
+❗❗❗ However, it's important to copy these changes to [./db](./db/) to guarantee that the changes made in production won't be lost on other updates to the website. ❗❗❗
 
-```bash
-bun dev
-```
+### Fixed Events
 
-To run for production:
+Fixed events
 
-```bash
-bun start
-```
+### Upcoming Events
 
-This project was created using `bun init` in bun v1.3.1. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+### About Us info
+
+### Resources/Library

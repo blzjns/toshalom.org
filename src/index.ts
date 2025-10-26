@@ -5,7 +5,21 @@ const server = serve({
   routes: {
     // Serve index.html for all unmatched routes.
     "/*": index,
+    "/db/:fileName": async req => {
+      const fileName = req.params.fileName;
 
+      // const url = new URL(req.url);
+      const filePath = `./db/${fileName}`; // Assuming 'public' is your static folder
+
+      try {
+        const file = Bun.file(filePath);
+        return new Response(file);
+      } catch (error) {
+        // Handle file not found or other errors
+        return new Response("Not Found", { status: 404 });
+      }
+
+    },
     "/api/hello": {
       async GET(req) {
         return Response.json({
