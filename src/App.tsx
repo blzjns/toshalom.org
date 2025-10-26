@@ -5,8 +5,33 @@ import "./index.css";
 import logo from "./assets/logo.svg";
 import InstagramPost from "./InstagramPost";
 import Header from "./Header";
+import { useEffect, useState } from "react";
 
 export function App() {
+
+  const [data, setData] = useState([]);
+  // const [error, setError] = useState();
+  // const [loading, setLoading] = useState<boolean>();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/db/fixed_events.json'); // Replace with your API endpoint
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const result = await response.json();
+        setData(result);
+      } catch (error) {
+        // setError(error);
+      } finally {
+        // setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [])
+
   return (
     <>
       <div className="app">
@@ -20,6 +45,8 @@ export function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
+
+        <div>{data.map((v, i) => <>{v.title}, </>)}</div>
 
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d623.1304514588927!2d-79.4338669529638!3d43.67947695204553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b35377a4063ff%3A0x730eccbf449168a9!2sShalom%20Catholic%20Community!5e0!3m2!1sen!2sca!4v1761458897925!5m2!1sen!2sca"
