@@ -7,9 +7,31 @@ const server = serve({
     "/*": index,
     "/toshalom.org/db/:fileName": async req => {
       const fileName = req.params.fileName;
+      const filePath = `./db/${fileName}`;
 
-      // const url = new URL(req.url);
-      const filePath = `./db/${fileName}`; // Assuming 'public' is your static folder
+      try {
+        const file = Bun.file(filePath);
+        return new Response(file);
+      } catch (error) {
+        // Handle file not found or other errors
+        return new Response("Not Found", { status: 404 });
+      }
+    },
+    "/toshalom.org/db/articles/:fileName": async req => {
+      const fileName = req.params.fileName;
+      const filePath = `./db/articles/${fileName}`;
+
+      try {
+        const file = Bun.file(filePath);
+        return new Response(file);
+      } catch (error) {
+        // Handle file not found or other errors
+        return new Response("Not Found", { status: 404 });
+      }
+    },
+    "/toshalom.org/db/images/:fileName": async req => {
+      const fileName = req.params.fileName;
+      const filePath = `./db/images/${fileName}`;
 
       try {
         const file = Bun.file(filePath);

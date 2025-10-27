@@ -1,16 +1,57 @@
-.logo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
+body {
+  background: #ffffff;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(138, 228, 255, 1) 100%);
+  height: auto;
 }
+
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 0.3s;
+  /* position: absolute; */
+  top: 5px;
+  height: 3em;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em gold);
+}
+
+.cloud {
+  width: 500px;
+  height: 275px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+  animation: slide-right 90s ease-in-out infinite alternate;
+  /* top: -35vh;
+  left: -25vw; */
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0vw); /* Start at its original horizontal position */
+  }
+  100% {
+    transform: translateX(100vw); /* Move 300px to the right */
+  }
+}
+
+.cloud-pos > * {
+  top: -35vh;
+  left: -25vw;
+}
+
+#cloud-back {
+  filter: url(#filter-back);
+  box-shadow: 300px 300px 30px -20px #fff;
+}
+
+#cloud-mid {
+  filter: url(#filter-mid);
+  box-shadow: 300px 340px 70px -60px rgba(158, 168, 179, 0.5);
+    left: -25vw;
+}
+
+#cloud-front {
+  filter: url(#filter-front);
+  box-shadow: 300px 370px 60px -100px rgba(0, 0, 0, 0.3);
+    left: -25vw;
 }
