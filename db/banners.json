@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Shalom North America Congress",
+        "image": "images/moyses.jpg",
+        "action": {
+            "text": "Join us!",
+            "color": "red"
+        },
+        "htmlUrl": "articles/acamps.html" 
+    },
+    {
+        "title": "Acamps Canada",
+        "image": "images/moyses.jpg",
+        "action": {
+            "text": "Join us!",
+            "color": "red"
+        },
+        "htmlUrl": "articles/acamps.html" 
+    }
+]
